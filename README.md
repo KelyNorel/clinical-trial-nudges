@@ -21,9 +21,9 @@ using observational data from ClinicalTrials.gov.
 ## Dataset
 
 **Source:** [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api)  
-**Trials:** 18,644 completed interventional trials with actual enrollment data  
-**Treatment:** Trials with behavioral nudge interventions (n=494)  
-**Control:** Standard recruitment trials (n=18,150)  
+**Trials:** 18,457 completed interventional trials (after removing top 1% enrollment outliers)  
+**Treatment:** Trials with behavioral nudge interventions (n=468)  
+**Control:** Standard recruitment trials (n=17,989)  
 No PHI involved — all data publicly available.
 
 ## Analyses
@@ -79,8 +79,8 @@ observational data challenge: association ≠ causation.
 ## Stack
 
 - **Python, pandas** — data ingestion and processing
-- **scipy, statsmodels** — frequentist hypothesis testing
-- **PyMC, ArviZ** — Bayesian modeling
+- **scipy** — frequentist hypothesis testing + Bayesian Beta-Binomial model
+- **statsmodels** — multiple testing correction
 - **scikit-learn, SHAP** — predictive modeling
 - **Matplotlib, seaborn, plotly** — visualizations
 - **JupyterLab** — documented analysis notebooks
