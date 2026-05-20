@@ -28,23 +28,32 @@ No PHI involved — all data publicly available.
 
 ## Analyses
 
-### Notebook 1 — EDA & Power Analysis (`notebooks/01_eda.ipynb`)
-- Enrollment rate distributions by phase, sponsor class, condition
-- Nudge vs control baseline characteristics
-- Power analysis: minimum detectable effect size
+### Notebook 1 — EDA & Power Analysis ✅
 
-### Notebook 2 — Frequentist A/B Test (`notebooks/02_frequentist.ipynb`)
-- Chi-square and t-tests for enrollment rate differences
-- Multiple testing correction (Bonferroni, Benjamini-Hochberg FDR)
-- Subgroup analysis: oncology vs non-oncology, phase, sponsor type
+![EDA Overview](figures/01_eda_overview.png)
+![Power Analysis](figures/02_power_analysis.png)
 
-### Notebook 3 — Bayesian A/B Test (`notebooks/03_bayesian.ipynb`)
+- Enrollment distributions reveal nudge trials enroll ~2x more (median 119 vs 60)
+- Federal sponsors use nudge strategies at 3x the overall rate
+- Power analysis: MDE = d=0.131 — well below our observed effect of d=0.489
+
+### Notebook 2 — Frequentist A/B Test ✅
+
+![Subgroup Forest Plot](figures/03_subgroup_forest.png)
+
+- Mann-Whitney U: p=2.29e-30, rank-biserial r=0.308
+- Nudge trials enroll **2x more participants** (geometric mean 131 vs 65)
+- Effect robust across oncology, non-oncology, and randomized trials
+- Bonferroni correction applied across 8 subgroups — 6 survive
+- Industry and federal sponsors underpowered (n=15 nudge trials each)
+
+### Notebook 3 — Bayesian A/B Test (`notebooks/03_bayesian.ipynb`) 🔄
 - Beta-Binomial conjugate model
 - Posterior distributions and credible intervals
 - Probability that nudge > control
 - Comparison of frequentist vs Bayesian conclusions
 
-### Notebook 4 — Predictive Modeling (`notebooks/04_predictive.ipynb`)
+### Notebook 4 — Predictive Modeling (`notebooks/04_predictive.ipynb`) 🔄
 - What trial features predict meeting enrollment goals?
 - Gradient boosting + SHAP feature importance
 - Enrollment goal achievement as binary outcome
@@ -91,5 +100,5 @@ python src/ingest.py
 
 **Author:** Raquel (Kely) Norel, PhD  
 **Domain:** Clinical Research / Behavioral Economics / A/B Testing  
-**Status:** 🔄 In progress
+**Status:** 🔄 In progress — Notebooks 1 and 2 complete
 
