@@ -47,11 +47,16 @@ No PHI involved — all data publicly available.
 - Bonferroni correction applied across 8 subgroups — 6 survive
 - Industry and federal sponsors underpowered (n=15 nudge trials each)
 
-### Notebook 3 — Bayesian A/B Test (`notebooks/03_bayesian.ipynb`) 🔄
-- Beta-Binomial conjugate model
-- Posterior distributions and credible intervals
-- Probability that nudge > control
-- Comparison of frequentist vs Bayesian conclusions
+### Notebook 3 — Bayesian A/B Test ✅
+
+![Bayesian Posteriors](figures/04_bayesian_posteriors.png)
+![Bayesian Lift](figures/05_bayesian_lift.png)
+
+- Beta-Binomial conjugate model with uniform prior Beta(1,1)
+- Posterior distributions completely separated — P(nudge > control) = 20000/20000 samples
+- Median lift: **+33%** at threshold ≥50, **+66%** at ≥100, **+114%** at ≥200 participants
+- 95% credible intervals entirely above zero across all thresholds
+- Effect grows larger for more ambitious enrollment targets
 
 ### Notebook 4 — Predictive Modeling (`notebooks/04_predictive.ipynb`) 🔄
 - What trial features predict meeting enrollment goals?
@@ -100,5 +105,5 @@ python src/ingest.py
 
 **Author:** Raquel (Kely) Norel, PhD  
 **Domain:** Clinical Research / Behavioral Economics / A/B Testing  
-**Status:** 🔄 In progress — Notebooks 1 and 2 complete
+**Status:** 🔄 In progress — Notebooks 1, 2, and 3 complete
 
