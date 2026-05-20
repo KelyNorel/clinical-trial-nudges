@@ -58,10 +58,23 @@ No PHI involved — all data publicly available.
 - 95% credible intervals entirely above zero across all thresholds
 - Effect grows larger for more ambitious enrollment targets
 
-### Notebook 4 — Predictive Modeling (`notebooks/04_predictive.ipynb`) 🔄
-- What trial features predict meeting enrollment goals?
-- Gradient boosting + SHAP feature importance
-- Enrollment goal achievement as binary outcome
+### Notebook 4 — Predictive Modeling ✅
+
+![ROC Curves](figures/06_roc_curves.png)
+![SHAP Comparison](figures/07_shap_comparison.png)
+![SHAP Beeswarm](figures/08_shap_beeswarm.png)
+
+- Binary outcome: did the trial enroll ≥100 participants? (33.8% success rate)
+- All models use OneHotEncoding — LabelEncoding artificially penalized Logistic Regression (AUC 0.677 → 0.730 with correct encoding)
+- Three models nearly identical after correct encoding: LR=0.730, RF=0.733, GBM=0.734
+- Relationship between trial design features and enrollment is largely linear
+- **`Has Nudge` ranks 10/21** across all models — positive direction but modest unique contribution after controlling for phase, sponsor, and allocation
+- Top predictors: trial phase (Phase 3 ✅, Phase 1 ❌), randomization, sponsor class
+
+**The key insight:** The 2x enrollment advantage of nudge trials (Notebooks 2-3) 
+is largely mediated by confounding trial design features — nudge trials tend to 
+be Phase 3, randomized, and academically sponsored. This is a classic 
+observational data challenge: association ≠ causation.
 
 ## Stack
 
@@ -105,5 +118,5 @@ python src/ingest.py
 
 **Author:** Raquel (Kely) Norel, PhD  
 **Domain:** Clinical Research / Behavioral Economics / A/B Testing  
-**Status:** 🔄 In progress — Notebooks 1, 2, and 3 complete
+**Status:** ✅ Complete — all 4 notebooks finished
 
