@@ -117,6 +117,7 @@ python src/ingest.py
 ---
 
 **Author:** Raquel (Kely) Norel, PhD  
-**Domain:** Clinical Research / Behavioral Economics / A/B Testing  
+**Domain:** Clinical Research / Behavioral Economics / A/B Testing 
+**Companion project:** [beats-and-focus](https://github.com/KelyNorel/beats-and-focus) — same methods, more fun 
 **Status:** ✅ Complete — all 4 notebooks finished
 
